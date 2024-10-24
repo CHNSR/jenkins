@@ -3,7 +3,11 @@ pipeline{
     stages{
         stage("Hello"){
             steps{
-                sh "robot mytest.robot"
+                sh '''
+                source myenv/bin/activate
+                robot mytest.robot
+                '''
+
             }
         }
     }
